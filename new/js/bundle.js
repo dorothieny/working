@@ -1,0 +1,2 @@
+(()=>{"use strict";for(let e of document.body.childNodes)"#text"!=e.nodeName&&console.log(e);new Promise(((e,o)=>{setTimeout((()=>{console.log("Подготовка данных"),e({name:"TV",price:2e3})}),2e3)})).then((e=>new Promise(((o,l)=>{setTimeout((()=>{e.status="order",o(e)}),2e3)})))).then((e=>{e.modify=!0,console.log(e)})).catch((()=>{console.error("Ошибка")})).finally((()=>{console.log("finally")}))})();
+//# sourceMappingURL=bundle.js.map
