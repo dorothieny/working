@@ -1,29 +1,56 @@
-import React from 'react';
+import React, {Component} from 'react';
 import CardList from '../card-list/card-list';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 
-const AppBlock = styled.div `
-    margin: 0 auto;
-    max-width: 800px;
-    background-color: #151514;
-    padding: 40px;
-    border-radius: 10px;
-    box-sizing: content-box;
-`
+export default  class App extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            data: [
+                {name: 'Pit Stenkoff',
+                text: ' liked ❤️ your project “Japonia. Koichi Sato Persona”', 
+                buttons: false,
+                num: '0', 
+                link: false,
+                id: 'twetew'},
 
-const App = ()=>{
-    const data = [
-        {text: 'I have to show them', url:"url(./Group.png)", id: 'twetew'},
-        {text: 'Going to learn React', id: 'dvsdvvg'},
-        {text: 'That is fine', id: 'fer'},
-        {text: 'But I need a rest', id: 'dv'},
-        {text: 'I have to show them. Going to learn React. That is fine. But I need a rest', id: 'fgdfg'}
-        
-    ];
-    return (
-        <AppBlock>
-            <CardList posts={data}/> 
-        </AppBlock>
-    )
+                {name: 'Woject Alf',
+                text: ' sent an invitation 📩 to co-author the project “Japonia. Koichi Sato Persona”', 
+                num: '1', 
+                buttons: true,
+                link: false,
+                id: 'dvsdvvg'},
+
+                {name: 'Nursultan Targynov',
+                text: ' accepted 🤙 the invitation to be co-authors Japonia. Koichi Sato Persona project', 
+                num:'2', 
+                buttons: false,
+                link: false,
+                id: 'fer'},
+
+                {name: 'Nursultan Targynov',
+                text: ' rejected 👎 the invitation to co-authors Japonia. Koichi Sato Persona project', 
+                num:'2', 
+                buttons: false,
+                link: false,
+                id: 'dv'},
+
+                {name: 'Members of the jury',
+                text: ' accepted ✨ the project Japonia. Koichi Sato Persona into the contest Tokyo is the capital of Japan. What happens next? ', 
+                num: false,
+                buttons: false,
+                link: true,
+                id: 'fgdfg'}
+            ]
+        }
+    }
+    render(){
+        const{data} = this.state
+        return (
+            <>
+                <CardList posts={data}/> 
+            </>
+        )
+    }
+   
 }
-export default App;
