@@ -1,0 +1,8 @@
+.item-list .list-group-item {
+    cursor: pointer;
+}
+.holderSpinner{
+    background-color: white;
+    border-radius: 3px;
+    padding: 20px;
+}
