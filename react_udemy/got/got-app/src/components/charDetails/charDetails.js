@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './charDetails.css';
 
-const Field = ({char , field, label})=>{
+const Field = ({char ,field, label})=>{
         return(
            
                 <li className="list-group-item d-flex justify-content-between">
