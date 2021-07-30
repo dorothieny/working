@@ -24,6 +24,7 @@ class ItemPage extends Component {
 
     render() {
         const {loading, error, menuItems} = this.props;
+        const{itemId}=this.props;
         if(error) {
             return (
                 <div className = "item_page">
@@ -39,7 +40,7 @@ class ItemPage extends Component {
             )
         }
         console.log(this.props.menuItems);
-        const item = menuItems.find(el => +el.id === +this.props.match.params.id)
+        const item = menuItems.find(el => +el.id === +itemId)
         const{title, url, category, price, id} = item;
         
 

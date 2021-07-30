@@ -28,6 +28,7 @@ class MenuList extends Component {
             return(
                 <MenuListItem key={menuItem.id} 
                 menuItem={menuItem}
+                onSelected={this.props.onSelected}
                 />
             )
         });

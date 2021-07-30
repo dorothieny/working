@@ -4,7 +4,7 @@ import Salad from '../img/salad.png';
 import Meat from '../img/steak.png';
 import Pizza from '../img/pizza.png'
 
-const MenuListItem = ({menuItem}) => {
+const MenuListItem = ({menuItem, onSelected}) => {
 
     const{title, price, url, category,id} = menuItem;
     function Img(){
@@ -22,7 +22,8 @@ const MenuListItem = ({menuItem}) => {
 
     return (
             <li className="menu__item"
-            onClick={()=> console.log(id)}>
+            onClick={()=>onSelected(id)}
+            >
                 <div className="menu__title">{title}</div>
                 <img className="menu__img" src={url} alt="Food img"></img>
                 <div className="menu__category">Category:
