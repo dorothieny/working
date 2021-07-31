@@ -3,7 +3,7 @@ import MenuListItem from '../menu-list-item';
 import {connect} from 'react-redux';
 import './menu-list.scss';
 import WithRestoService from '../hoc';
-import {menuLoaded, menuRequested, menuError} from '../../actions';
+import {menuLoaded, menuRequested, menuError, addedToCart, changePrice} from '../../actions';
 import Spinner from '../spinner';
 import Error from '../error';
 
@@ -17,7 +17,7 @@ class MenuList extends Component {
         .catch(() => this.props.menuError());
     }
     render() {
-        const{menuItems, loading, error} = this.props;
+        const{menuItems, loading, error, addedToCart, changePrice} = this.props;
         if(loading){
             return <Spinner/>
         }
@@ -29,6 +29,9 @@ class MenuList extends Component {
                 <MenuListItem key={menuItem.id} 
                 menuItem={menuItem}
                 onSelected={this.props.onSelected}
+                onAddToCart = {() => {
+                    addedToCart(menuItem.id);
+                    changePrice()}}
                 />
             )
         });
@@ -56,7 +59,9 @@ const mapStateToProps =(state)=>{
 const mapDispatchToProps = {
    menuLoaded,
    menuRequested,
-   menuError
+   menuError,
+   addedToCart,
+   changePrice
 }
 
 export default WithRestoService()(connect(mapStateToProps,mapDispatchToProps)(MenuList));

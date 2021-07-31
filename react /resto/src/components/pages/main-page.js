@@ -7,10 +7,7 @@ class MainPage extends Component{
         return (
             <MenuList
             onSelected={(itemId)=> {
-                console.log(itemId);
-                
                 this.props.history.push(`/main/${itemId}`);
-                console.log(this.props.history)
              }}/>
         )
     }

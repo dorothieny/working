@@ -2,9 +2,9 @@ import React from 'react';
 import './cart-table.scss';
 import {connect} from 'react-redux';
 import WithRestoService from '../hoc';
+import {deletedFromCart, changePrice} from '../../actions';
 
-
-const CartTable = ({items, onDelete}) => {
+const CartTable = ({items, deletedFromCart, changePrice}) => {
 
 
     return (
@@ -23,7 +23,9 @@ const CartTable = ({items, onDelete}) => {
                             <div className="cart__item-title">{title}</div>
                             <div className="cart__item-price">{price}$</div>
                             <div 
-                            onClick={()=>onDelete(id)}
+                            onClick={()=>{
+                                deletedFromCart(id);
+                                changePrice()}}
                             className="cart__close">&times;</div>
                         </div>
                         )
@@ -41,12 +43,9 @@ const mapStateToProps = ({items}) => {
     }
 };
 
-const mapDispatchToProps = () => {
-    return{
-        onDelete: (id)=> {console.log(`deletes ${id}`);
-    }
-   
-    }
+const mapDispatchToProps = {
+        deletedFromCart,
+        changePrice
 }
 
 export default WithRestoService()(connect(mapStateToProps, mapDispatchToProps)(CartTable));

@@ -22,6 +22,19 @@ const addedToCart = (id) => {
         payload: id
     }
 }
+const deletedFromCart = (id) => {
+    return {
+        type: 'ITEM_DELETE_FROM_CART',
+        payload: id
+    }
+}
+const changePrice = ()=>{
+    return{
+        type: 'COUNT_PRICE'
+    }
+}
+
+
 
 
 
@@ -29,3 +42,5 @@ export {menuLoaded};
 export {menuRequested};
 export {menuError};
 export {addedToCart};
+export {deletedFromCart};
+export {changePrice};
