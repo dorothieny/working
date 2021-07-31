@@ -56,7 +56,7 @@ const reducer=(state = InitialState, action)=>{
             };
             case 'COUNT_PRICE':
             const priceOne = state.items.map(item => item.price);
-            const countedPrice = priceOne.reduce((a, b) => a + b);
+            const countedPrice = priceOne.reduce(function(acc, val) { return acc + val; }, 0);
             return{
                 ...state,
                 price: countedPrice
