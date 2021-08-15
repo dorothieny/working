@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () =>{
     const modalTimer = setTimeout(() => openModal('.modal', modalTimer), 5000);
     
 tabs('.tabheader__items', '.tabheader__item', '.tabcontent', 'tabheader__item_active');
-timer('.timer', '2021-07-11');
+timer('.timer', '2021-10-30');
 
 slider({
 container:'.offer__slider',

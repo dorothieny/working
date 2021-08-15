@@ -716,7 +716,7 @@ window.addEventListener('DOMContentLoaded', () =>{
     const modalTimer = setTimeout(() => (0,_modules_modal__WEBPACK_IMPORTED_MODULE_3__.openModal)('.modal', modalTimer), 5000);
     
 (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_0__.default)('.tabheader__items', '.tabheader__item', '.tabcontent', 'tabheader__item_active');
-(0,_modules_timer__WEBPACK_IMPORTED_MODULE_1__.default)('.timer', '2021-07-11');
+(0,_modules_timer__WEBPACK_IMPORTED_MODULE_1__.default)('.timer', '2021-09-11');
 
 (0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__.default)({
 container:'.offer__slider',
